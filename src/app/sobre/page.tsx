@@ -105,14 +105,14 @@ export default function SobrePage() {
               <h2 className="text-3xl font-bold mb-6">Nossa Jornada</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  A OBC Produções nasceu há mais de 20 anos de uma paixão por
+                  A OBC Produções atua há mais de 20 anos com uma paixão por
                   criar experiências memoráveis. O que começou como um pequeno
-                  escritório se transformou em um hub criativo referencia no
+                  sonho, hoje se transformou em um hub criativo referência no
                   mercado de eventos corporativos.
                 </p>
                 <p>
                   Ao longo dos anos, tivemos o privilégio de participar de mais
-                  de 500 eventos, cada um único e especial. De convenções a
+                  de 200 eventos, cada um único e especial. De convenções a
                   grandes lançamentos, cada projeto nos ensinou algo novo e nos
                   ajudou a evoluir.
                 </p>
@@ -120,7 +120,7 @@ export default function SobrePage() {
                   Hoje, contamos com uma equipe de profissionais experientes e
                   apaixonados, prontos para transformar suas ideias em
                   realidade. Trabalhamos com grandes marcas como Amazon, Globo e
-                  Telecine.
+                  Sesc.
                 </p>
               </div>
             </div>
