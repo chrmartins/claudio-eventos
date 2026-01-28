@@ -62,33 +62,6 @@ const values = [
   },
 ];
 
-const team = [
-  {
-    name: "Ana Silva",
-    role: "Diretora Criativa",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop",
-  },
-  {
-    name: "Carlos Santos",
-    role: "Gerente de Projetos",
-    image:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop",
-  },
-  {
-    name: "Mariana Costa",
-    role: "Coordenadora de Eventos",
-    image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop",
-  },
-  {
-    name: "Roberto Lima",
-    role: "Diretor Comercial",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
-  },
-];
-
 export default function SobrePage() {
   return (
     <>
@@ -203,28 +176,14 @@ export default function SobrePage() {
             </p>
           </div>
 
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {team.map((member) => (
-              <Card key={member.name} className="overflow-hidden group">
-                <CardContent className="p-0">
-                  <div className="relative aspect-square overflow-hidden">
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      fill
-                      className="object-cover transition-transform duration-300 group-hover:scale-105"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    />
-                  </div>
-                  <div className="p-4 text-center">
-                    <h3 className="font-semibold">{member.name}</h3>
-                    <p className="text-sm text-muted-foreground">
-                      {member.role}
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="relative rounded-2xl overflow-hidden">
+            <Image
+              src="/foto-equipe.png"
+              alt="Equipe OBC Produções"
+              width={1400}
+              height={600}
+              className="w-full h-auto object-cover"
+            />
           </div>
         </section>
 

@@ -5,8 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 const socialLinks = [
-  { name: "Instagram", href: "https://instagram.com", icon: Instagram },
-  { name: "LinkedIn", href: "https://linkedin.com", icon: Linkedin },
+  { name: "Instagram", href: "https://www.instagram.com/obcproducoes", icon: Instagram },
+  { name: "LinkedIn", href: "https://www.linkedin.com/company/obcproducoes", icon: Linkedin },
 ];
 
 const quickLinks = [
@@ -122,7 +122,7 @@ export function Footer() {
                   className="flex items-center gap-3 text-sm text-foreground/70 hover:text-primary transition-colors"
                 >
                   <Mail className="h-4 w-4 text-primary" />
-                  contato@obcproducoes.com.br
+                  comercial@obcproducoes.com.br
                 </a>
               </li>
               <li>
@@ -149,7 +149,7 @@ export function Footer() {
               reservados.
             </p>
             <p className="text-xs text-foreground/50">
-              CNPJ: 00.000.000/0001-00
+              CNPJ: 45.181.917/0001-78
             </p>
           </div>
         </div>

@@ -1,7 +1,8 @@
 "use client";
 
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 import { motion } from "framer-motion";
-import { Star } from "lucide-react";
+import { MessageCircle, Star } from "lucide-react";
 import Image from "next/image";
 
 export function ClientsSection() {
@@ -105,23 +106,13 @@ export function ClientsSection() {
               Sua marca também pode fazer parte dessa lista
             </p>
             <a
-              href="/contato"
+              href={getWhatsAppUrl("Olá! Vi que vocês trabalham com grandes marcas e gostaria de saber mais.")}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary/90 text-white font-bold rounded-full transition-all duration-300 hover:transform hover:scale-105 hover:shadow-lg hover:shadow-primary/25"
             >
+              <MessageCircle className="w-5 h-5" />
               Fale com a gente
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
             </a>
           </div>
         </motion.div>

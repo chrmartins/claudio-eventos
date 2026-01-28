@@ -1,7 +1,8 @@
 "use client";
 
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { MessageCircle } from "lucide-react";
 
 export function ImpactSection() {
   return (
@@ -33,7 +34,10 @@ export function ImpactSection() {
                 size="lg"
                 className="font-bold uppercase tracking-wider"
               >
-                <Link href="/contato">Fale Conosco!</Link>
+                <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="mr-2 h-5 w-5" />
+                  Fale Conosco!
+                </a>
               </Button>
             </div>
           </div>
