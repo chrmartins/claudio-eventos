@@ -1,57 +1,115 @@
 "use client";
 
-import { Separator } from "@/components/ui/separator";
-import {
-  Facebook,
-  Instagram,
-  Mail,
-  MapPin,
-  Phone,
-  Youtube,
-} from "lucide-react";
+import { Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 
 const socialLinks = [
-  { name: "Facebook", href: "#", icon: Facebook },
-  { name: "Instagram", href: "#", icon: Instagram },
-  { name: "YouTube", href: "#", icon: Youtube },
+  { name: "Instagram", href: "https://instagram.com", icon: Instagram },
+  { name: "LinkedIn", href: "https://linkedin.com", icon: Linkedin },
 ];
 
 const quickLinks = [
   { name: "Home", href: "/" },
-  { name: "Sobre", href: "/sobre" },
+  { name: "Sobre Nós", href: "/sobre" },
   { name: "Contato", href: "/contato" },
+];
+
+const services = [
+  "Eventos Corporativos",
+  "Convenções",
+  "Stands e Feiras",
+  "Ativações de Marca",
+  "Lançamentos",
 ];
 
 export function Footer() {
   return (
-    <footer className="bg-muted/50 border-t">
+    <footer className="bg-secondary">
+      {/* Main Footer */}
       <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
-          <div className="space-y-4">
-            <Link href="/" className="inline-block">
-              <span className="text-xl font-bold text-primary">
-                Claudio<span className="text-accent-foreground"> Eventos</span>
+          <div className="lg:col-span-1">
+            <Link href="/" className="inline-flex items-center gap-2">
+              <svg
+                viewBox="0 0 60 70"
+                className="h-12 w-10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 20C10 12 16 6 24 6H36C44 6 50 12 50 20V55C50 60 46 64 41 64H19C14 64 10 60 10 55V20Z"
+                  fill="currentColor"
+                  className="text-primary"
+                />
+                <path
+                  d="M15 22C15 16 19 12 25 12H35C41 12 45 16 45 22V52C45 56 42 59 38 59H22C18 59 15 56 15 52V22Z"
+                  fill="white"
+                  stroke="black"
+                  strokeWidth="3"
+                />
+                <rect
+                  x="22"
+                  y="6"
+                  width="16"
+                  height="12"
+                  rx="2"
+                  fill="white"
+                  stroke="black"
+                  strokeWidth="3"
+                />
+                <path
+                  d="M26 28V38M30 30V40M34 26V36"
+                  stroke="black"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M24 48V52M28 46V54M32 48V52M36 47V51"
+                  stroke="black"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+              </svg>
+              <span className="text-2xl font-black">
+                <span className="text-secondary-foreground">OBC</span>
+                <span className="text-primary block text-sm font-semibold tracking-widest">
+                  PRODUÇÕES
+                </span>
               </span>
             </Link>
-            <p className="text-sm text-muted-foreground max-w-xs">
-              Transformando seus sonhos em eventos inesquecíveis. Casamentos,
-              corporativos, aniversários e muito mais.
+            <p className="mt-4 text-sm text-secondary-foreground/70 max-w-xs">
+              Mais que uma produtora, somos o hub criativo que transforma ideias
+              em experiências memoráveis.
             </p>
+            {/* Social Icons */}
+            <div className="flex items-center gap-3 mt-6">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+                  aria-label={social.name}
+                >
+                  <social.icon className="h-5 w-5" />
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Quick Links */}
-          <div className="space-y-4">
-            <h3 className="text-sm font-semibold uppercase tracking-wider">
+          <div>
+            <h3 className="text-sm font-bold uppercase tracking-wider text-secondary-foreground mb-4">
               Links Rápidos
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    className="text-sm text-secondary-foreground/70 hover:text-primary transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -60,75 +118,72 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact Info */}
-          <div className="space-y-4">
-            <h3 className="text-sm font-semibold uppercase tracking-wider">
-              Contato
+          {/* Services */}
+          <div>
+            <h3 className="text-sm font-bold uppercase tracking-wider text-secondary-foreground mb-4">
+              Serviços
             </h3>
             <ul className="space-y-3">
-              <li className="flex items-start space-x-3">
-                <Phone className="h-4 w-4 mt-0.5 text-muted-foreground" />
-                <span className="text-sm text-muted-foreground">
-                  (11) 99999-9999
-                </span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <Mail className="h-4 w-4 mt-0.5 text-muted-foreground" />
-                <span className="text-sm text-muted-foreground">
-                  contato@claudioeventos.com.br
-                </span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <MapPin className="h-4 w-4 mt-0.5 text-muted-foreground" />
-                <span className="text-sm text-muted-foreground">
-                  São Paulo, SP - Brasil
-                </span>
-              </li>
+              {services.map((service) => (
+                <li key={service}>
+                  <span className="text-sm text-secondary-foreground/70">
+                    {service}
+                  </span>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Social Media */}
-          <div className="space-y-4">
-            <h3 className="text-sm font-semibold uppercase tracking-wider">
-              Redes Sociais
+          {/* Contact */}
+          <div>
+            <h3 className="text-sm font-bold uppercase tracking-wider text-secondary-foreground mb-4">
+              Contato
             </h3>
-            <div className="flex space-x-4">
-              {socialLinks.map((social) => (
+            <ul className="space-y-4">
+              <li>
                 <a
-                  key={social.name}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                  aria-label={social.name}
+                  href="tel:+5521999999999"
+                  className="flex items-center gap-3 text-sm text-secondary-foreground/70 hover:text-primary transition-colors"
                 >
-                  <social.icon className="h-5 w-5" />
+                  <Phone className="h-4 w-4 text-primary" />
+                  (21) 99999-9999
                 </a>
-              ))}
-            </div>
+              </li>
+              <li>
+                <a
+                  href="mailto:contato@obcproducoes.com.br"
+                  className="flex items-center gap-3 text-sm text-secondary-foreground/70 hover:text-primary transition-colors"
+                >
+                  <Mail className="h-4 w-4 text-primary" />
+                  contato@obcproducoes.com.br
+                </a>
+              </li>
+              <li>
+                <div className="flex items-start gap-3 text-sm text-secondary-foreground/70">
+                  <MapPin className="h-4 w-4 text-primary mt-0.5" />
+                  <span>
+                    Rio de Janeiro, RJ
+                    <br />
+                    Brasil
+                  </span>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
+      </div>
 
-        <Separator className="my-8" />
-
-        <div className="flex flex-col items-center justify-between space-y-4 sm:flex-row sm:space-y-0">
-          <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Claudio Eventos. Todos os direitos
-            reservados.
-          </p>
-          <div className="flex space-x-6">
-            <Link
-              href="#"
-              className="text-sm text-muted-foreground hover:text-primary transition-colors"
-            >
-              Política de Privacidade
-            </Link>
-            <Link
-              href="#"
-              className="text-sm text-muted-foreground hover:text-primary transition-colors"
-            >
-              Termos de Uso
-            </Link>
+      {/* Bottom Bar */}
+      <div className="border-t border-secondary-foreground/10">
+        <div className="container mx-auto px-4 py-6 sm:px-6 lg:px-8">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-xs text-secondary-foreground/50 text-center sm:text-left">
+              © {new Date().getFullYear()} OBC Produções LTDA. Todos os direitos
+              reservados.
+            </p>
+            <p className="text-xs text-secondary-foreground/50">
+              CNPJ: 00.000.000/0001-00
+            </p>
           </div>
         </div>
       </div>

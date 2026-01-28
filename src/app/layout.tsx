@@ -3,41 +3,44 @@ import { Header } from "@/components/layout/header";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Bebas_Neue, Montserrat } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// Montserrat para corpo de texto
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+// Bebas Neue para títulos (similar ao Geometos)
+const bebasNeue = Bebas_Neue({
+  variable: "--font-bebas",
   subsets: ["latin"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
   title: {
-    default: "Claudio Eventos - Transformando Sonhos em Eventos Inesquecíveis",
-    template: "%s | Claudio Eventos",
+    default: "OBC Produções - Transformando Ideias em Experiências",
+    template: "%s | OBC Produções",
   },
   description:
-    "Somos especialistas em criar eventos memoráveis. Casamentos, corporativos, aniversários e muito mais. Solicite seu orçamento!",
+    "Hub criativo especializado em eventos corporativos, convenções, stands, ativações e muito mais. Mais de 20 anos de experiência.",
   keywords: [
-    "eventos",
-    "casamento",
-    "festa",
-    "corporativo",
-    "aniversário",
-    "debutante",
-    "formatura",
-    "São Paulo",
+    "eventos corporativos",
+    "produção de eventos",
+    "convenções",
+    "stands",
+    "ativações de marca",
+    "lançamentos",
+    "Rio de Janeiro",
   ],
-  authors: [{ name: "Claudio Eventos" }],
+  authors: [{ name: "OBC Produções" }],
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    siteName: "Claudio Eventos",
+    siteName: "OBC Produções",
   },
 };
 
@@ -49,7 +52,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
+        className={`${montserrat.variable} ${bebasNeue.variable} font-sans antialiased min-h-screen flex flex-col`}
       >
         <ThemeProvider
           attribute="class"

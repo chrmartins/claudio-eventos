@@ -1,93 +1,94 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Play, Star } from "lucide-react";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
-interface HeroSectionProps {
-  videoId?: string;
-}
+export function HeroSection() {
+  const [isVisible, setIsVisible] = useState(false);
 
-export function HeroSection({ videoId = "dQw4w9WgXcQ" }: HeroSectionProps) {
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-muted">
-      <div className="container mx-auto px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
-          {/* Content */}
-          <div className="max-w-2xl">
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl">
-              Transformamos seus
-              <span className="text-primary block">sonhos em realidade</span>
-            </h1>
-            <p className="mt-6 text-lg text-muted-foreground sm:text-xl max-w-xl">
-              Somos especialistas em criar eventos memoráveis. De casamentos
-              íntimos a grandes celebrações corporativas, cuidamos de cada
-              detalhe para você.
-            </p>
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <Button asChild size="lg" className="w-full sm:w-auto">
-                <Link href="/contato">
-                  Solicitar Orçamento
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button
-                asChild
-                variant="outline"
-                size="lg"
-                className="w-full sm:w-auto"
-              >
-                <Link href="/sobre">Conheça Nosso Trabalho</Link>
-              </Button>
-            </div>
+    <section className="relative min-h-[90vh] flex items-center bg-[#0C0C0C] overflow-hidden">
+      {/* Decorative Elements */}
+      <div className="absolute top-20 right-20 w-72 h-72 bg-[#F8A638]/20 rounded-full blur-[100px]" />
+      <div className="absolute bottom-20 left-20 w-96 h-96 bg-[#F8A638]/10 rounded-full blur-[120px]" />
 
-            {/* Stats */}
-            <div className="mt-12 grid grid-cols-3 gap-4 border-t pt-8">
-              <div>
-                <p className="text-3xl font-bold text-primary sm:text-4xl">
-                  500+
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  Eventos Realizados
-                </p>
-              </div>
-              <div>
-                <p className="text-3xl font-bold text-primary sm:text-4xl">
-                  10+
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  Anos de Experiência
-                </p>
-              </div>
-              <div>
-                <p className="text-3xl font-bold text-primary sm:text-4xl">
-                  98%
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  Clientes Satisfeitos
-                </p>
-              </div>
+      {/* Content */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="max-w-xl">
+
+            {/* Main Headline */}
+            <h1
+              className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-[0.9] mb-6 transition-all duration-700 delay-100 ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-4"
+              }`}
+            >
+              <span className="text-[#FFFFFF] block">Transformamos</span>
+              <span className="text-[#F8A638] block">Ideias</span>
+              <span className="text-[#FFFFFF] block">
+                em <span className="text-[#F8A638]">Experiências</span>
+              </span>
+            </h1>
+
+            {/* Subtitle */}
+            <p
+              className={`text-lg sm:text-xl text-[#FFFFFF]/70 max-w-xl mb-10 transition-all duration-700 delay-200 ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-4"
+              }`}
+            >
+              Há mais de 20 anos criando eventos corporativos que impressionam,
+              engajam e geram resultados. Convenções, lançamentos, ativações e
+              muito mais.
+            </p>
+
+            {/* CTA Buttons */}
+            <div
+              className={`flex flex-col sm:flex-row gap-4 transition-all duration-700 delay-300 ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-4"
+              }`}
+            >
             </div>
           </div>
 
-          {/* Video */}
-          <div className="relative aspect-video w-full overflow-hidden rounded-xl shadow-2xl lg:aspect-square xl:aspect-video">
-            <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent z-10 pointer-events-none rounded-xl" />
-            <iframe
-              src={`https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1`}
-              title="Vídeo institucional"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="absolute inset-0 h-full w-full rounded-xl"
-            />
+          {/* YouTube Video */}
+          <div
+            className={`relative transition-all duration-700 delay-400 ${
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-4"
+            }`}
+          >
+            <div className="relative aspect-video rounded-2xl overflow-hidden border-2 border-[#F8A638]/30 shadow-2xl shadow-[#F8A638]/10">
+              <iframe
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                title="OBC Produções - Showreel"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+              />
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Background decoration */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute -top-1/2 -right-1/4 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
-        <div className="absolute -bottom-1/2 -left-1/4 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 right-8 hidden lg:flex flex-col items-center gap-2">
+        <div className="w-px h-16 bg-gradient-to-b from-transparent via-[#F8A638] to-transparent" />
+        <span className="text-xs text-[#FFFFFF]/40 uppercase tracking-widest rotate-90 origin-center translate-y-8">
+          Scroll
+        </span>
       </div>
     </section>
   );

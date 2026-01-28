@@ -8,27 +8,27 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Contato",
   description:
-    "Entre em contato com a Claudio Eventos. Solicite seu orçamento ou tire suas dúvidas.",
+    "Entre em contato com a OBC Produções. Solicite seu orçamento ou tire suas dúvidas.",
 };
 
 const contactInfo = [
   {
     icon: Phone,
     title: "Telefone",
-    info: "(11) 99999-9999",
+    info: "(21) 99999-9999",
     description: "Segunda a Sexta, 9h às 18h",
   },
   {
     icon: Mail,
     title: "E-mail",
-    info: "contato@claudioeventos.com.br",
+    info: "contato@obcproducoes.com.br",
     description: "Resposta em até 24h",
   },
   {
     icon: MapPin,
     title: "Endereço",
-    info: "São Paulo, SP",
-    description: "Atendemos em todo o estado",
+    info: "Rio de Janeiro, RJ",
+    description: "Atendemos em todo o Brasil",
   },
   {
     icon: Clock,

@@ -8,7 +8,7 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "Sobre Nós",
   description:
-    "Conheça a Claudio Eventos. Há mais de 10 anos transformando sonhos em eventos inesquecíveis.",
+    "Conheça a OBC Produções. Há mais de 20 anos transformando ideias em experiências inesquecíveis.",
 };
 
 const values = [
@@ -81,10 +81,10 @@ export default function SobrePage() {
             Nossa História
           </Badge>
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl mb-6">
-            Sobre a <span className="text-primary">Claudio Eventos</span>
+            Sobre a <span className="text-primary">OBC Produções</span>
           </h1>
           <p className="text-xl text-muted-foreground">
-            Há mais de uma década transformando momentos especiais em memórias
+            Há mais de 20 anos transformando ideias em experiências
             inesquecíveis. Conheça nossa história, valores e a equipe por trás
             de cada evento de sucesso.
           </p>
@@ -97,7 +97,7 @@ export default function SobrePage() {
           <div className="relative aspect-square lg:aspect-[4/3] rounded-2xl overflow-hidden">
             <Image
               src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&h=600&fit=crop"
-              alt="Equipe Claudio Eventos em ação"
+              alt="Equipe OBC Produções em ação"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -107,22 +107,21 @@ export default function SobrePage() {
             <h2 className="text-3xl font-bold mb-6">Nossa Jornada</h2>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                A Claudio Eventos nasceu em 2015 de uma paixão compartilhada por
+                A OBC Produções nasceu há mais de 20 anos de uma paixão por
                 criar experiências memoráveis. O que começou como um pequeno
-                escritório com apenas três pessoas se transformou em uma das
-                principais empresas de eventos da região.
+                escritório se transformou em um hub criativo referencia no
+                mercado de eventos corporativos.
               </p>
               <p>
                 Ao longo dos anos, tivemos o privilégio de participar de mais de
-                500 eventos, cada um único e especial. De casamentos intimistas
-                a grandes conferências corporativas, cada projeto nos ensinou
-                algo novo e nos ajudou a evoluir.
+                500 eventos, cada um único e especial. De convenções a grandes
+                lançamentos, cada projeto nos ensinou algo novo e nos ajudou a
+                evoluir.
               </p>
               <p>
                 Hoje, contamos com uma equipe de profissionais experientes e
                 apaixonados, prontos para transformar suas ideias em realidade.
-                Nossa missão permanece a mesma: criar momentos que ficam para
-                sempre na memória.
+                Trabalhamos com grandes marcas como Amazon, Globo e Telecine.
               </p>
             </div>
           </div>

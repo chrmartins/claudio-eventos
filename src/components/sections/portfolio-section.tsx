@@ -1,6 +1,5 @@
 "use client";
 
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -24,55 +23,57 @@ interface PortfolioItem {
 const portfolioItems: PortfolioItem[] = [
   {
     id: 1,
-    title: "Casamento Maria & João",
-    category: "Casamento",
-    description:
-      "Um casamento dos sonhos em um jardim encantado com mais de 200 convidados.",
-    image:
-      "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&h=600&fit=crop",
-  },
-  {
-    id: 2,
-    title: "Conferência Tech 2025",
+    title: "Convenção Amazon",
     category: "Corporativo",
     description:
-      "Evento corporativo de tecnologia para mais de 1000 participantes.",
+      "Grande convenção corporativa com mais de 500 participantes e experiências imersivas.",
     image:
       "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop",
   },
   {
-    id: 3,
-    title: "Festa de 15 Anos",
-    category: "Debutante",
-    description: "Uma noite mágica para celebrar os 15 anos da Ana.",
+    id: 2,
+    title: "Festival Globo",
+    category: "Festival",
+    description:
+      "Produção completa de festival com múltiplos palcos e atrações.",
     image:
-      "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&h=600&fit=crop",
   },
   {
-    id: 4,
-    title: "Lançamento de Produto",
-    category: "Corporativo",
+    id: 3,
+    title: "Lançamento Telecine",
+    category: "Lançamento",
     description:
-      "Evento de lançamento com cobertura completa e experiência imersiva.",
+      "Evento de lançamento com cobertura completa e experiência cinematográfica.",
     image:
       "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&h=600&fit=crop",
   },
   {
-    id: 5,
-    title: "Bodas de Ouro",
-    category: "Casamento",
+    id: 4,
+    title: "Stand Feira ABAV",
+    category: "Stands",
     description:
-      "Celebração especial de 50 anos de casados em um salão clássico.",
+      "Criação e montagem de stand de destaque para feira de turismo.",
     image:
-      "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800&h=600&fit=crop",
+  },
+  {
+    id: 5,
+    title: "Ativação de Marca",
+    category: "Ativação",
+    description:
+      "Ativação de marca inovadora que conquistou o público e gerou engajamento.",
+    image:
+      "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&h=600&fit=crop",
   },
   {
     id: 6,
-    title: "Festival de Verão",
-    category: "Festival",
-    description: "Festival ao ar livre com múltiplos palcos e atrações.",
+    title: "Evento Corporativo Tech",
+    category: "Corporativo",
+    description:
+      "Conferência de tecnologia de alto padrão com networking e palestras.",
     image:
-      "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&h=600&fit=crop",
   },
 ];
 
@@ -91,30 +92,34 @@ export function PortfolioSection() {
       : portfolioItems.filter((item) => item.category === selectedCategory);
 
   return (
-    <section className="py-16 sm:py-24 lg:py-32 bg-muted/30">
+    <section id="portfolio" className="py-16 sm:py-24 bg-secondary">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <Badge variant="secondary" className="mb-4">
-            Portfólio
-          </Badge>
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-            Nossos Eventos em Destaque
+        <div className="text-center max-w-4xl mx-auto mb-12">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight uppercase mb-4">
+            <span className="text-secondary-foreground">Nossos </span>
+            <span className="text-primary">Eventos</span>
+            <span className="text-secondary-foreground"> em Destaque</span>
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
+          <p className="text-lg text-secondary-foreground/70">
             Confira alguns dos eventos que tivemos o prazer de realizar. Cada
-            projeto é único e reflete a personalidade de nossos clientes.
+            projeto é único e reflete a excelência da OBC Produções.
           </p>
         </div>
 
         {/* Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-2 mb-8">
+        <div className="flex flex-wrap justify-center gap-2 mb-10">
           {categories.map((category) => (
             <Button
               key={category}
               variant={selectedCategory === category ? "default" : "outline"}
               size="sm"
               onClick={() => setSelectedCategory(category)}
+              className={
+                selectedCategory === category
+                  ? "font-bold"
+                  : "border-secondary-foreground/30 text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary"
+              }
             >
               {category}
             </Button>
@@ -126,7 +131,7 @@ export function PortfolioSection() {
           {filteredItems.map((item) => (
             <Card
               key={item.id}
-              className="group cursor-pointer overflow-hidden transition-all hover:shadow-lg"
+              className="group cursor-pointer overflow-hidden bg-background border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               onClick={() => setSelectedItem(item)}
             >
               <CardContent className="p-0">
@@ -135,15 +140,27 @@ export function PortfolioSection() {
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <div className="absolute bottom-0 left-0 right-0 p-4 text-white translate-y-full group-hover:translate-y-0 transition-transform">
-                    <Badge variant="secondary" className="mb-2">
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300" />
+
+                  {/* Category Badge */}
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
                       {item.category}
-                    </Badge>
-                    <h3 className="font-semibold">{item.title}</h3>
+                    </span>
+                  </div>
+
+                  {/* Content */}
+                  <div className="absolute bottom-0 left-0 right-0 p-5">
+                    <h3 className="font-bold text-white text-lg mb-1">
+                      {item.title}
+                    </h3>
+                    <p className="text-white/70 text-sm line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      {item.description}
+                    </p>
                   </div>
                 </div>
               </CardContent>
@@ -156,13 +173,17 @@ export function PortfolioSection() {
           open={!!selectedItem}
           onOpenChange={() => setSelectedItem(null)}
         >
-          <DialogContent className="max-w-3xl">
+          <DialogContent className="max-w-3xl bg-background">
             <DialogHeader>
-              <DialogTitle>{selectedItem?.title}</DialogTitle>
-              <DialogDescription>{selectedItem?.description}</DialogDescription>
+              <DialogTitle className="text-2xl font-black">
+                {selectedItem?.title}
+              </DialogTitle>
+              <DialogDescription className="text-base">
+                {selectedItem?.description}
+              </DialogDescription>
             </DialogHeader>
             {selectedItem && (
-              <div className="relative aspect-video w-full overflow-hidden rounded-lg">
+              <div className="relative aspect-video w-full overflow-hidden rounded-lg border-4 border-primary">
                 <Image
                   src={selectedItem.image}
                   alt={selectedItem.title}
@@ -171,11 +192,11 @@ export function PortfolioSection() {
                 />
               </div>
             )}
-            <div className="flex justify-between items-center">
-              <Badge>{selectedItem?.category}</Badge>
-              <Button variant="outline" onClick={() => setSelectedItem(null)}>
-                Fechar
-              </Button>
+            <div className="flex justify-between items-center pt-2">
+              <span className="bg-primary text-primary-foreground text-sm font-bold px-4 py-2 rounded-full">
+                {selectedItem?.category}
+              </span>
+              <Button onClick={() => setSelectedItem(null)}>Fechar</Button>
             </div>
           </DialogContent>
         </Dialog>

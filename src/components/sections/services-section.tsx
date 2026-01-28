@@ -1,83 +1,84 @@
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
-import {
-  Building2,
-  Cake,
-  Calendar,
-  GraduationCap,
-  PartyPopper,
-  Sparkles,
-} from "lucide-react";
+import { Award, Building2, Clock, DollarSign, Star } from "lucide-react";
 
-const services = [
+const benefits = [
   {
-    icon: PartyPopper,
-    title: "Casamentos",
+    number: 1,
+    icon: Clock,
+    title: "Planejamento Completo",
     description:
-      "Realize o casamento dos seus sonhos com uma organização impecável.",
+      "Sem tempo para planejar seu evento corporativo? Nós cuidamos de absolutamente tudo.",
   },
   {
+    number: 2,
+    icon: DollarSign,
+    title: "Custos Otimizados",
+    description:
+      "Produção de alto impacto, com custos otimizados que realmente fazem sentido.",
+  },
+  {
+    number: 3,
+    icon: Award,
+    title: "20 Anos de Mercado",
+    description:
+      "Com mais de 20 anos no mercado, não improvisamos nem deixamos falhas.",
+  },
+  {
+    number: 4,
     icon: Building2,
-    title: "Eventos Corporativos",
+    title: "Soluções Completas",
     description:
-      "Conferências, lançamentos e celebrações empresariais de alto nível.",
+      "Precisa de stands, convenções, ativações e muito mais? Resolvemos cada detalhe.",
   },
   {
-    icon: Cake,
-    title: "Aniversários",
+    number: 5,
+    icon: Star,
+    title: "Sucesso Garantido",
     description:
-      "Festas de aniversário para todas as idades, do infantil ao adulto.",
-  },
-  {
-    icon: GraduationCap,
-    title: "Formaturas",
-    description: "Bailes e cerimônias de formatura memoráveis.",
-  },
-  {
-    icon: Sparkles,
-    title: "Debutantes",
-    description: "A festa de 15 anos perfeita para marcar essa data especial.",
-  },
-  {
-    icon: Calendar,
-    title: "Eventos Especiais",
-    description: "Bodas, batizados, chás e outras celebrações únicas.",
+      "Seu evento será lembrado por todos! Garantimos que seja um sucesso.",
   },
 ];
 
 export function ServicesSection() {
   return (
-    <section className="py-16 sm:py-24 lg:py-32 bg-muted/30">
+    <section className="py-16 sm:py-24 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <Badge variant="secondary" className="mb-4">
-            Nossos Serviços
-          </Badge>
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-            O Que Fazemos de Melhor
+        <div className="text-center max-w-4xl mx-auto mb-16">
+          <h2 className="text-3xl font-black tracking-tight uppercase sm:text-4xl lg:text-5xl mb-4">
+            <span className="text-foreground">Sem surpresas, aqui está</span>
+            <span className="text-primary block">tudo que oferecemos</span>
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            Oferecemos uma gama completa de serviços para tornar qualquer evento
-            em uma experiência inesquecível.
-          </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => (
-            <Card
-              key={service.title}
-              className="group hover:shadow-lg transition-all hover:-translate-y-1"
+        {/* Benefits List */}
+        <div className="max-w-4xl mx-auto space-y-4">
+          {benefits.map((benefit) => (
+            <div
+              key={benefit.number}
+              className="flex items-stretch gap-4 group"
             >
-              <CardContent className="p-6">
-                <div className="h-14 w-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <service.icon className="h-7 w-7 text-primary" />
+              {/* Number Badge */}
+              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 bg-primary rounded-lg flex items-center justify-center">
+                <span className="text-xl sm:text-2xl font-black text-primary-foreground">
+                  {benefit.number}
+                </span>
+              </div>
+
+              {/* Content Card */}
+              <div className="flex-1 bg-primary rounded-lg p-4 sm:p-5 flex items-center gap-4">
+                <div className="hidden sm:flex h-10 w-10 rounded-lg bg-primary-foreground/20 items-center justify-center flex-shrink-0">
+                  <benefit.icon className="h-5 w-5 text-primary-foreground" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                <p className="text-muted-foreground">{service.description}</p>
-              </CardContent>
-            </Card>
+                <div>
+                  <h3 className="font-bold text-primary-foreground text-sm sm:text-base">
+                    {benefit.title}
+                  </h3>
+                  <p className="text-primary-foreground/90 text-xs sm:text-sm">
+                    {benefit.description}
+                  </p>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
       </div>
