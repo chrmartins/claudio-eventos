@@ -18,62 +18,58 @@ interface PortfolioItem {
   category: string;
   description: string;
   image: string;
+  imagePosition?: string;
 }
 
 const portfolioItems: PortfolioItem[] = [
   {
     id: 1,
-    title: "Convenção Amazon",
+    title: "Globo - Juri PPA",
     category: "Corporativo",
     description:
-      "Grande convenção corporativa com mais de 500 participantes e experiências imersivas.",
-    image:
-      "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop",
+      "Evento de votação com salas de reunião, auditório, happy hour e coquetel.",
+    image: "/portfolio/globo-juri.png",
   },
   {
     id: 2,
-    title: "Festival Globo",
-    category: "Festival",
+    title: "Salão do Turismo 2024",
+    category: "Feiras",
     description:
-      "Produção completa de festival com múltiplos palcos e atrações.",
-    image:
-      "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&h=600&fit=crop",
+      "Realização da edição de 2024 do Salão do Turismo ocupou os pavilhões 03, 04 e o anfiteatro do Riocentro.",
+    image: "/portfolio/salao-turismo.png",
   },
   {
     id: 3,
-    title: "Lançamento Telecine",
-    category: "Lançamento",
+    title: "Show de Lançamento Ripiei",
+    category: "Show",
     description:
-      "Evento de lançamento com cobertura completa e experiência cinematográfica.",
-    image:
-      "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&h=600&fit=crop",
+      "Realização de show no Mirante do Pedrão com estrutura completa de cenografia, sonorização, iluminação e buffet.",
+    image: "/portfolio/ripiei.png",
+    imagePosition: "object-bottom",
   },
   {
     id: 4,
-    title: "Stand Feira ABAV",
-    category: "Stands",
+    title: "Virtu - Stand Rio Oil Gas",
+    category: "Stand",
     description:
-      "Criação e montagem de stand de destaque para feira de turismo.",
-    image:
-      "https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800&h=600&fit=crop",
+      "Realização de stand vitrine com exposição do caminhão da empresa que é movido a gás, uma inovação no setor.",
+    image: "/portfolio/virtu.png",
   },
   {
     id: 5,
-    title: "Ativação de Marca",
-    category: "Ativação",
+    title: "Pré-Estreia Amazon",
+    category: "Lançamento",
     description:
-      "Ativação de marca inovadora que conquistou o público e gerou engajamento.",
-    image:
-      "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&h=600&fit=crop",
+      "Evento de première de cinema com tapete vermelho, cenografia, cobertura fotográfica, e presenças vips.",
+    image: "/portfolio/pre-estreia-amazon.png",
   },
   {
     id: 6,
-    title: "Evento Corporativo Tech",
-    category: "Corporativo",
+    title: "Festa 25 Anos Canal Brasil e Globo Filmes",
+    category: "Festa",
     description:
-      "Conferência de tecnologia de alto padrão com networking e palestras.",
-    image:
-      "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&h=600&fit=crop",
+      "Celebração do aniversário das duas empresas realizado no Circo Voador para 1500 convidados.",
+    image: "/portfolio/globo-filmes.png",
   },
 ];
 
@@ -140,7 +136,7 @@ export function PortfolioSection() {
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    className={`object-cover transition-transform duration-500 group-hover:scale-110 ${item.imagePosition || "object-center"}`}
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                   {/* Overlay */}
