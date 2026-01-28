@@ -42,23 +42,23 @@ export function Header() {
         isScrolled && "shadow-md",
       )}
     >
-      <div className="container mx-auto flex h-18 items-center justify-between px-4 sm:px-6 lg:px-8 py-4">
+      <div className="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8 py-4">
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image
             src="/logo-light.png"
             alt="OBC Produções"
-            width={150}
-            height={50}
-            className="h-10 w-auto dark:hidden"
+            width={220}
+            height={75}
+            className="h-14 w-auto dark:hidden"
             priority
           />
           <Image
             src="/logo-dark.png"
             alt="OBC Produções"
-            width={150}
-            height={50}
-            className="h-10 w-auto hidden dark:block"
+            width={220}
+            height={75}
+            className="h-14 w-auto hidden dark:block"
             priority
           />
         </Link>
