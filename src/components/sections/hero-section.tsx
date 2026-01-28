@@ -21,7 +21,7 @@ export function HeroSection() {
           <div className="max-w-xl">
             {/* Main Headline */}
             <h1
-              className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-[0.9] mb-6 transition-all duration-700 delay-100 ${
+              className={`text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black uppercase leading-[0.9] mb-6 transition-all duration-700 delay-100 ${
                 isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-4"
