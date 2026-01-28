@@ -75,9 +75,19 @@ export function HeroSection() {
                 : "opacity-0 translate-y-4"
             }`}
           >
-            <div className="relative aspect-video rounded-2xl overflow-hidden border-2 border-primary/30 shadow-2xl shadow-primary/10">
+            {/* Glow effect behind video */}
+            <div className="absolute -inset-4 bg-gradient-to-r from-primary/40 via-primary/20 to-primary/40 rounded-3xl blur-2xl opacity-60" />
+
+            {/* Decorative corners */}
+            <div className="absolute -top-2 -left-2 w-8 h-8 border-t-4 border-l-4 border-primary rounded-tl-lg" />
+            <div className="absolute -top-2 -right-2 w-8 h-8 border-t-4 border-r-4 border-primary rounded-tr-lg" />
+            <div className="absolute -bottom-2 -left-2 w-8 h-8 border-b-4 border-l-4 border-primary rounded-bl-lg" />
+            <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-4 border-r-4 border-primary rounded-br-lg" />
+
+            {/* Video container */}
+            <div className="relative aspect-video rounded-2xl overflow-hidden bg-black/50 backdrop-blur-sm ring-1 ring-white/10 shadow-2xl shadow-primary/20">
               <iframe
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                src="https://www.youtube.com/embed/TRJRKlhHVUQ?autoplay=1&mute=1&loop=1&playlist=TRJRKlhHVUQ"
                 title="OBC Produções - Showreel"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
