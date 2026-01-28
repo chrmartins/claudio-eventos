@@ -1,6 +1,11 @@
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { ThemeProvider } from "@/components/providers/theme-provider";
+import {
+  LocalBusinessJsonLd,
+  OrganizationJsonLd,
+  WebsiteJsonLd,
+} from "@/components/seo/json-ld";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 import type { Metadata } from "next";
 import { Bebas_Neue, Montserrat } from "next/font/google";
@@ -21,26 +26,81 @@ const bebasNeue = Bebas_Neue({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://obcproducoes.com.br"),
   title: {
-    default: "OBC Produções - Transformando Ideias em Experiências",
-    template: "%s | OBC Produções",
+    default:
+      "OBC Produções | Eventos Corporativos no Rio de Janeiro - Hub Criativo",
+    template: "%s | OBC Produções - Eventos Corporativos RJ",
   },
   description:
-    "Hub criativo especializado em eventos corporativos, convenções, stands, ativações e muito mais. Mais de 20 anos de experiência.",
+    "OBC Produções: Hub criativo com +20 anos de experiência em eventos corporativos no Rio de Janeiro. Convenções, stands, ativações de marca, lançamentos e produção completa. Solicite orçamento!",
   keywords: [
-    "eventos corporativos",
-    "produção de eventos",
-    "convenções",
-    "stands",
+    "eventos corporativos rio de janeiro",
+    "produção de eventos rj",
+    "empresa de eventos corporativos",
+    "convenções empresariais",
+    "stands para feiras",
     "ativações de marca",
-    "lançamentos",
-    "Rio de Janeiro",
+    "lançamentos de produtos",
+    "eventos empresariais rio de janeiro",
+    "produtora de eventos rj",
+    "organização de eventos corporativos",
+    "hub criativo eventos",
+    "OBC Produções",
+    "eventos prime video",
+    "eventos globo filmes",
+    "eventos telecine",
   ],
   authors: [{ name: "OBC Produções" }],
+  creator: "OBC Produções",
+  publisher: "OBC Produções",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: "https://obcproducoes.com.br",
+  },
   openGraph: {
     type: "website",
     locale: "pt_BR",
+    url: "https://obcproducoes.com.br",
     siteName: "OBC Produções",
+    title: "OBC Produções | Eventos Corporativos no Rio de Janeiro",
+    description:
+      "Hub criativo com +20 anos de experiência em eventos corporativos. Convenções, stands, ativações de marca e muito mais. Globo Filmes, Prime Video, Telecine confiam em nós!",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "OBC Produções - Eventos Corporativos",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "OBC Produções | Eventos Corporativos no Rio de Janeiro",
+    description:
+      "Hub criativo com +20 anos de experiência em eventos corporativos. Solicite seu orçamento!",
+    images: ["/og-image.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    // Adicione seus códigos de verificação quando tiver
+    // google: "seu-codigo-google",
+    // yandex: "seu-codigo-yandex",
   },
 };
 
@@ -51,6 +111,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
+      <head>
+        <OrganizationJsonLd />
+        <LocalBusinessJsonLd />
+        <WebsiteJsonLd />
+      </head>
       <body
         className={`${montserrat.variable} ${bebasNeue.variable} font-sans antialiased min-h-screen flex flex-col`}
       >
