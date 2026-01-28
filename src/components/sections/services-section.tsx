@@ -58,7 +58,7 @@ export function ServicesSection() {
               className="flex items-stretch gap-4 group"
             >
               {/* Number Badge */}
-              <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 bg-primary rounded-lg flex items-center justify-center">
+              <div className="flex-shrink-0 w-12 sm:w-16 bg-primary rounded-lg flex items-center justify-center">
                 <span className="text-xl sm:text-2xl font-black text-primary-foreground">
                   {benefit.number}
                 </span>

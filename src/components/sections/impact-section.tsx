@@ -74,7 +74,7 @@ export function ImpactSection() {
             ].map((item) => (
               <div key={item.number} className="flex items-stretch gap-3">
                 {/* Number */}
-                <div className="shrink-0 w-14 h-14 bg-primary rounded-lg flex items-center justify-center">
+                <div className="shrink-0 w-14 bg-primary rounded-lg flex items-center justify-center">
                   <span className="text-2xl font-black text-primary-foreground">
                     {item.number}
                   </span>
