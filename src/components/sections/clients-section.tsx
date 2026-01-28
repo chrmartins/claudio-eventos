@@ -73,7 +73,7 @@ export function ClientsSection() {
                 className="max-w-6xl mx-auto"
               >
                 {/* Título na área branca */}
-                <p className="text-center text-sm font-semibold text-gray-500 uppercase tracking-widest mb-8">
+                <p className="text-center text-lg font-semibold text-gray-500 uppercase tracking-widest mb-8">
                   Marcas que confiam em nosso trabalho
                 </p>
 
