@@ -9,7 +9,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import { Menu, Phone } from "lucide-react";
+import { Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -169,8 +169,7 @@ export function Header() {
                 </nav>
 
                 {/* CTA Button */}
-                <div className="mt-8">
-                </div>
+                <div className="mt-8"></div>
               </div>
             </SheetContent>
           </Sheet>

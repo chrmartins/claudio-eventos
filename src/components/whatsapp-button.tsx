@@ -9,7 +9,7 @@ interface WhatsAppButtonProps {
 }
 
 export function WhatsAppButton({
-  phoneNumber = "5511999999999",
+  phoneNumber = "5521981877459",
   message = "Olá! Gostaria de saber mais sobre os serviços de eventos.",
 }: WhatsAppButtonProps) {
   const encodedMessage = encodeURIComponent(message);

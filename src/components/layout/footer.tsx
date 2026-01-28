@@ -95,9 +95,7 @@ export function Footer() {
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service}>
-                  <span className="text-sm text-foreground/70">
-                    {service}
-                  </span>
+                  <span className="text-sm text-foreground/70">{service}</span>
                 </li>
               ))}
             </ul>
@@ -111,11 +109,11 @@ export function Footer() {
             <ul className="space-y-4">
               <li>
                 <a
-                  href="tel:+5521999999999"
+                  href="tel:+5521981877459"
                   className="flex items-center gap-3 text-sm text-foreground/70 hover:text-primary transition-colors"
                 >
                   <Phone className="h-4 w-4 text-primary" />
-                  (21) 99999-9999
+                  (21) 98187-7459
                 </a>
               </li>
               <li>
