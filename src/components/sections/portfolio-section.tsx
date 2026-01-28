@@ -92,16 +92,16 @@ export function PortfolioSection() {
       : portfolioItems.filter((item) => item.category === selectedCategory);
 
   return (
-    <section id="portfolio" className="py-16 sm:py-24 bg-secondary">
+    <section id="portfolio" className="py-16 sm:py-24 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-4xl mx-auto mb-12">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight uppercase mb-4">
-            <span className="text-secondary-foreground">Nossos </span>
+            <span className="text-foreground">Nossos </span>
             <span className="text-primary">Eventos</span>
-            <span className="text-secondary-foreground"> em Destaque</span>
+            <span className="text-foreground"> em Destaque</span>
           </h2>
-          <p className="text-lg text-secondary-foreground/70">
+          <p className="text-lg text-foreground/70">
             Confira alguns dos eventos que tivemos o prazer de realizar. Cada
             projeto é único e reflete a excelência da OBC Produções.
           </p>
@@ -118,7 +118,7 @@ export function PortfolioSection() {
               className={
                 selectedCategory === category
                   ? "font-bold"
-                  : "border-secondary-foreground/30 text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary"
+                  : "border-foreground/30 text-foreground hover:bg-foreground hover:text-background"
               }
             >
               {category}

@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { Menu, Phone } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -37,62 +38,29 @@ export function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full transition-all duration-300",
-        isScrolled
-          ? "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-md"
-          : "bg-transparent",
+        "sticky top-0 z-50 w-full transition-all duration-300 bg-background",
+        isScrolled && "shadow-md",
       )}
     >
       <div className="container mx-auto flex h-18 items-center justify-between px-4 sm:px-6 lg:px-8 py-4">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
-          {/* Logo Icon */}
-          <svg
-            viewBox="0 0 60 70"
-            className="h-10 w-9"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M10 20C10 12 16 6 24 6H36C44 6 50 12 50 20V55C50 60 46 64 41 64H19C14 64 10 60 10 55V20Z"
-              fill="currentColor"
-              className="text-primary"
-            />
-            <path
-              d="M15 22C15 16 19 12 25 12H35C41 12 45 16 45 22V52C45 56 42 59 38 59H22C18 59 15 56 15 52V22Z"
-              fill="white"
-              stroke="black"
-              strokeWidth="3"
-            />
-            <rect
-              x="22"
-              y="6"
-              width="16"
-              height="12"
-              rx="2"
-              fill="white"
-              stroke="black"
-              strokeWidth="3"
-            />
-            <path
-              d="M26 28V38M30 30V40M34 26V36"
-              stroke="black"
-              strokeWidth="2"
-              strokeLinecap="round"
-            />
-            <path
-              d="M24 48V52M28 46V54M32 48V52M36 47V51"
-              stroke="black"
-              strokeWidth="2"
-              strokeLinecap="round"
-            />
-          </svg>
-          <span className="text-xl font-black sm:text-2xl tracking-wide">
-            <span className="text-foreground">OBC</span>
-            <span className="text-primary block text-xs sm:text-sm font-semibold tracking-widest">
-              PRODUÇÕES
-            </span>
-          </span>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/logo-light.png"
+            alt="OBC Produções"
+            width={150}
+            height={50}
+            className="h-10 w-auto dark:hidden"
+            priority
+          />
+          <Image
+            src="/logo-dark.png"
+            alt="OBC Produções"
+            width={150}
+            height={50}
+            className="h-10 w-auto hidden dark:block"
+            priority
+          />
         </Link>
 
         {/* Desktop Navigation + Theme Toggle + CTA */}

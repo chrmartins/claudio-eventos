@@ -1,48 +1,35 @@
 "use client";
 
-import { Card } from "@/components/ui/card";
 import Image from "next/image";
-
-// Logos dos clientes - imagens na pasta public/logos
-const clients = [
-  { name: "Globo Filmes", logo: "/logos/globo-filmes.svg" },
-  { name: "Prime Video", logo: "/logos/prime-video.png" },
-  { name: "Amazon Studios", logo: "/logos/amazon-studios.svg" },
-  { name: "Foxton", logo: "/logos/foxton.svg" },
-  { name: "Canal Brasil", logo: "/logos/canal-brasil.svg" },
-  { name: "Telecine", logo: "/logos/telecine.svg" },
-];
 
 export function ClientsSection() {
   return (
-    <section className="py-16 sm:py-20 bg-[#0C0C0C]">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl uppercase">
-            <span className="text-[#FFFFFF]">Nossos </span>
-            <span className="text-[#F8A638]">Clientes</span>
-          </h2>
+    <section>
+      {/* Header com fundo preto */}
+      <div className="py-12 sm:py-16 bg-[#0C0C0C]">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl uppercase">
+              <span className="text-[#FFFFFF]">Nossos </span>
+              <span className="text-[#F8A638]">Clientes</span>
+            </h2>
+          </div>
         </div>
+      </div>
 
-        {/* Clients Grid */}
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6 max-w-6xl mx-auto">
-          {clients.map((client) => (
-            <Card
-              key={client.name}
-              className="bg-[#FFFFFF] rounded-lg p-4 flex items-center justify-center aspect-square hover:shadow-xl transition-all hover:scale-105 border-0"
-            >
-              <div className="relative w-full h-full flex items-center justify-center p-2">
-                <Image
-                  src={client.logo}
-                  alt={client.name}
-                  width={120}
-                  height={80}
-                  className="object-contain max-h-[60px] w-auto"
-                />
-              </div>
-            </Card>
-          ))}
+      {/* Clients Banner com fundo branco */}
+      <div className="py-6 sm:py-8 bg-[#FFFFFF]">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <Image
+              src="/clientes.png"
+              alt="Nossos Clientes - Prime Video, Globo Filmes, JB FM, Sony Music, Froneri, 100 Anos de Globo, Canal Brasil, Senac, Festival do Rio, Virtugnl, Amazon MGM Studios, Telecine, Sesc, Foxton, BAT Brasil"
+              width={1400}
+              height={400}
+              className="w-full h-auto"
+              priority
+            />
+          </div>
         </div>
       </div>
     </section>

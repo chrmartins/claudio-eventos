@@ -30,12 +30,6 @@ const contactInfo = [
     info: "Rio de Janeiro, RJ",
     description: "Atendemos em todo o Brasil",
   },
-  {
-    icon: Clock,
-    title: "Horário",
-    info: "Seg - Sex: 9h às 18h",
-    description: "Sábados com agendamento",
-  },
 ];
 
 export default function ContatoPage() {
@@ -59,7 +53,7 @@ export default function ContatoPage() {
 
       {/* Contact Info Cards */}
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 mb-16">
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {contactInfo.map((item) => (
             <Card key={item.title}>
               <CardContent className="p-6 text-center">
@@ -75,64 +69,6 @@ export default function ContatoPage() {
             </Card>
           ))}
         </div>
-      </section>
-
-      {/* WhatsApp CTA */}
-      <section className="container mx-auto px-4 sm:px-6 lg:px-8 mb-16">
-        <Card className="bg-green-50 dark:bg-green-950 border-green-200 dark:border-green-800">
-          <CardContent className="p-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-4">
-              <div className="h-14 w-14 rounded-full bg-green-500 flex items-center justify-center">
-                <MessageCircle className="h-7 w-7 text-white" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-lg">Prefere WhatsApp?</h3>
-                <p className="text-muted-foreground">
-                  Resposta rápida pelo nosso WhatsApp
-                </p>
-              </div>
-            </div>
-            <Button
-              asChild
-              size="lg"
-              className="bg-green-500 hover:bg-green-600 text-white w-full sm:w-auto"
-            >
-              <a
-                href="https://wa.me/5511999999999?text=Olá! Gostaria de saber mais sobre os serviços de eventos."
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <MessageCircle className="mr-2 h-5 w-5" />
-                Enviar Mensagem
-              </a>
-            </Button>
-          </CardContent>
-        </Card>
-      </section>
-
-      {/* Contact Form */}
-      <section className="container mx-auto px-4 sm:px-6 lg:px-8 mb-16">
-        <ContactForm />
-      </section>
-
-      {/* Map Section (placeholder) */}
-      <section className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <Card className="overflow-hidden">
-          <CardContent className="p-0">
-            <div className="aspect-[21/9] bg-muted flex items-center justify-center">
-              <div className="text-center p-8">
-                <MapPin className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                <h3 className="font-semibold text-lg mb-2">
-                  Mapa será adicionado aqui
-                </h3>
-                <p className="text-muted-foreground max-w-md">
-                  Integração com Google Maps ou outro serviço de mapas será
-                  configurada futuramente.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
       </section>
     </div>
   );
