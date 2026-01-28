@@ -203,22 +203,18 @@ export default function SobrePage() {
       {/* Stats */}
       <section className="bg-primary text-primary-foreground py-16 sm:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 text-center">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 text-center">
             <div>
-              <p className="text-5xl font-bold mb-2">500+</p>
+              <p className="text-5xl font-bold mb-2">200+</p>
               <p className="text-primary-foreground/80">Eventos Realizados</p>
             </div>
             <div>
-              <p className="text-5xl font-bold mb-2">10+</p>
+              <p className="text-5xl font-bold mb-2">20+</p>
               <p className="text-primary-foreground/80">Anos de Experiência</p>
             </div>
             <div>
               <p className="text-5xl font-bold mb-2">50+</p>
               <p className="text-primary-foreground/80">Parceiros</p>
-            </div>
-            <div>
-              <p className="text-5xl font-bold mb-2">98%</p>
-              <p className="text-primary-foreground/80">Clientes Satisfeitos</p>
             </div>
           </div>
         </div>

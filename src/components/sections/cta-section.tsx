@@ -58,11 +58,10 @@ export function CtaSection() {
           </div>
 
           {/* Stats */}
-          <div className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-8">
+          <div className="mt-16 grid grid-cols-2 sm:grid-cols-3 gap-8">
             {[
               { number: "20+", label: "Anos de Experiência" },
-              { number: "500+", label: "Eventos Realizados" },
-              { number: "100+", label: "Clientes Satisfeitos" },
+              { number: "200+", label: "Eventos Realizados" },
               { number: "50+", label: "Grandes Marcas" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
