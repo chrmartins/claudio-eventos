@@ -1,7 +1,7 @@
 "use client";
 
-import { getWhatsAppUrl, WHATSAPP_CONFIG } from "@/lib/whatsapp";
 import { Button } from "@/components/ui/button";
+import { getWhatsAppUrl, WHATSAPP_CONFIG } from "@/lib/whatsapp";
 import { MessageCircle } from "lucide-react";
 
 interface WhatsAppButtonProps {

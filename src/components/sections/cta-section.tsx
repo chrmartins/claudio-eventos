@@ -1,11 +1,13 @@
 "use client";
 
-import { getWhatsAppUrl } from "@/lib/whatsapp";
 import { Button } from "@/components/ui/button";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 import { ArrowRight, MessageCircle } from "lucide-react";
 
 export function CtaSection() {
-  const whatsappUrl = getWhatsAppUrl("Olá! Gostaria de solicitar um orçamento para meu evento.");
+  const whatsappUrl = getWhatsAppUrl(
+    "Olá! Gostaria de solicitar um orçamento para meu evento.",
+  );
   return (
     <section className="py-20 sm:py-28 bg-primary relative overflow-hidden">
       {/* Background Pattern */}

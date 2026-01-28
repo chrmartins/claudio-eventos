@@ -106,7 +106,9 @@ export function ClientsSection() {
               Sua marca também pode fazer parte dessa lista
             </p>
             <a
-              href={getWhatsAppUrl("Olá! Vi que vocês trabalham com grandes marcas e gostaria de saber mais.")}
+              href={getWhatsAppUrl(
+                "Olá! Vi que vocês trabalham com grandes marcas e gostaria de saber mais.",
+              )}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary/90 text-white font-bold rounded-full transition-all duration-300 hover:transform hover:scale-105 hover:shadow-lg hover:shadow-primary/25"

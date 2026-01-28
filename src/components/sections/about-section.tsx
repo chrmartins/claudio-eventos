@@ -1,5 +1,5 @@
-import { getWhatsAppUrl } from "@/lib/whatsapp";
 import { Button } from "@/components/ui/button";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 import { CheckCircle, MessageCircle } from "lucide-react";
 import Link from "next/link";
 
@@ -135,7 +135,13 @@ export function AboutSection() {
                 variant="outline"
                 className="border-secondary-foreground text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary"
               >
-                <a href={getWhatsAppUrl("Olá! Gostaria de ser parceiro da OBC Produções.")} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={getWhatsAppUrl(
+                    "Olá! Gostaria de ser parceiro da OBC Produções.",
+                  )}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <MessageCircle className="mr-2 h-4 w-4" />
                   Seja Nosso Parceiro!
                 </a>
