@@ -101,7 +101,7 @@ export function ImpactSection() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-16 text-center">
+        <div className="mt-32 text-center">
           <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
             <span className="font-black text-foreground uppercase">
               Sem desculpas,
