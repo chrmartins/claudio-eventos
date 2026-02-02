@@ -37,7 +37,7 @@ const contactInfo = [
   {
     icon: Mail,
     title: "E-mail",
-    info: "contato@obcproducoes.com.br",
+    info: "comercial@obcproducoes.com.br",
     description: "Resposta em até 24h",
   },
   {
