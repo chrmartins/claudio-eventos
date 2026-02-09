@@ -87,7 +87,7 @@ export function HeroSection() {
             {/* Video container */}
             <div className="relative aspect-video rounded-2xl overflow-hidden bg-black/50 backdrop-blur-sm ring-1 ring-white/10 shadow-2xl shadow-primary/20">
               <iframe
-                src="https://www.youtube.com/embed/TRJRKlhHVUQ?autoplay=1&mute=1&loop=1&playlist=TRJRKlhHVUQ"
+                src="https://www.youtube.com/embed/z-pEvFHfWMM?autoplay=1&mute=1&loop=1&playlist=z-pEvFHfWMM"
                 title="OBC Produções - Showreel"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
